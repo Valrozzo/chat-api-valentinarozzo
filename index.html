@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Chat WebSocket</title>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <main class="container">
+
+        <h1>Chat en tiempo real</h1>
+
+        <!-- LOGIN -->
+        <section id="loginSection" class="card">
+
+            <h2>Ingresar al chat</h2>
+
+            <p>
+                Escribe tu nombre para conectarte.
+            </p>
+
+            <input
+                id="nameInput"
+                type="text"
+                maxlength="30"
+                placeholder="Tu nombre"
+                autocomplete="off"
+            >
+
+            <button id="connectButton">
+                Conectarme
+            </button>
+
+            <p
+                id="loginError"
+                class="error"
+            ></p>
+
+        </section>
+
+
+        <!-- CHAT -->
+        <section
+            id="chatSection"
+            class="chat hidden"
+        >
+
+            <!-- ESTADO -->
+            <div class="statusBar">
+
+                <div>
+                    Estado:
+                    <strong id="connectionStatus">
+                        Desconectado
+                    </strong>
+                </div>
+
+                <div>
+                    readyState:
+                    <strong id="readyState">
+                        3
+                    </strong>
+                </div>
+
+            </div>
+
+
+            <div class="layout">
+
+                <!-- USUARIOS -->
+                <aside class="usersPanel">
+
+                    <h3>
+                        Usuarios conectados
+                    </h3>
+
+                    <ul id="usersList"></ul>
+
+                </aside>
+
+
+                <!-- MENSAJES -->
+                <section class="messagesPanel">
+
+                    <div id="messages"></div>
+
+                    <p
+                        id="typingIndicator"
+                        class="typing"
+                    ></p>
+
+
+                    <!-- FORMULARIO -->
+                    <form id="messageForm">
+
+                        <input
+                            id="messageInput"
+                            type="text"
+                            maxlength="500"
+                            placeholder="Escribe un mensaje..."
+                            autocomplete="off"
+                        >
+
+                        <button type="submit">
+                            Enviar
+                        </button>
+
+                    </form>
+
+                    <p
+                        id="messageError"
+                        class="error"
+                    ></p>
+
+                </section>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- CONFIGURACIÓN -->
+    <script src="config.js"></script>
+
+    <!-- LÓGICA DEL CHAT -->
+    <script src="app.js"></script>
+
+</body>
+
+</html>
