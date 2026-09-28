@@ -453,7 +453,7 @@ process.on("SIGINT", shutdown);
 // INICIAR SERVIDOR
 // ======================================================
 
-server.listen(PORT, () => {
+server.listen(PORT, "0.0.0.0", () => {
   console.log(`Servidor ejecutándose en el puerto ${PORT}`);
   console.log(`Health: http://localhost:${PORT}/health`);
   console.log(
