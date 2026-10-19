@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Chat en Tiempo Real</title>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Chat WebSocket</h1>
+
+        <div id="login">
+            <h3>Ingresa tu nombre</h3>
+
+            <input
+                type="text"
+                id="username"
+                maxlength="30"
+                placeholder="Tu nombre"
+            >
+
+            <button onclick="connect()">
+                Entrar al chat
+            </button>
+        </div>
+
+        <div id="chat" style="display:none;">
+
+            <p>
+                Estado:
+                <span id="status">Desconectado</span>
+            </p>
+
+            <h3>Usuarios conectados</h3>
+
+            <ul id="users"></ul>
+
+            <div id="messages"></div>
+
+            <p id="typing"></p>
+
+            <input
+                type="text"
+                id="message"
+                maxlength="500"
+                placeholder="Escribe un mensaje"
+            >
+
+            <button onclick="sendMessage()">
+                Enviar
+            </button>
+
+            <button onclick="disconnect()">
+                Salir
+            </button>
+
+        </div>
+
+    </div>
+
+    <script src="config.js"></script>
+    <script src="app.js"></script>
+
+</body>
+</html>

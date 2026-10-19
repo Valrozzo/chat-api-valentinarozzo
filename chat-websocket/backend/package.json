@@ -1,0 +1,12 @@
+{
+  "name": "chat-websocket",
+  "version": "1.0.0",
+  "description": "Servidor de chat en tiempo real",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "ws": "^8.18.0"
+  }
+}
